@@ -26,6 +26,7 @@ int attr pstsUnderlineHeight 0x0
 int attr showClear 0x0
 int bool logSildersAlwaysVisible 0x0
 int bool supportFileScheme 0x0
+int bool suppotFileScheme 0x0
 int color accent 0x0
 int color background_tab_pressed 0x0
 int color dataIn 0x0
@@ -35,7 +36,6 @@ int color primary 0x0
 int color primary_dark 0x0
 int color rot 0x0
 int color switchbar 0x0
-int color tab_text 0x0
 int dimen add_button_margin 0x0
 int dimen add_button_margin_topfab 0x0
 int dimen diameter 0x0
@@ -46,19 +46,10 @@ int dimen round_button_diameter 0x0
 int dimen stdpadding 0x0
 int dimen switchbar_pad 0x0
 int dimen vpn_setting_padding 0x0
-int drawable ic_menu_archive 0x0
 int drawable ic_menu_close_clear_cancel 0x0
-int drawable ic_menu_copy_holo_light 0x0
-int drawable ic_menu_log 0x0
 int drawable ic_menu_pause 0x0
 int drawable ic_menu_play 0x0
 int drawable ic_notification 0x0
-int drawable ic_quick 0x0
-int drawable ic_stat_vpn 0x0
-int drawable ic_stat_vpn_empty_halo 0x0
-int drawable ic_stat_vpn_offline 0x0
-int drawable ic_stat_vpn_outline 0x0
-int drawable vpn_item_settings 0x0
 int id as_servername 0x0
 int id check 0x0
 int id icon 0x0
@@ -73,8 +64,6 @@ int layout api_confirm 0x0
 int layout import_as_config 0x0
 int layout launchvpn 0x0
 int layout userpass 0x0
-int mipmap banner_tv 0x0
-int mipmap ic_launcher 0x0
 int plurals days_left 0x0
 int plurals hours_left 0x0
 int plurals minutes_left 0x0

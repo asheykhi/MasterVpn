@@ -5,5 +5,5 @@
   -->
 
 <resources>
-    <bool name="supportFileScheme">true</bool>
+    <bool name="suppotFileScheme">true</bool>
 </resources>

@@ -398,27 +398,7 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
         nbuilder.setLocalOnly(true);
 
     }
-    private int getIconByConnectionStatus(ConnectionStatus level) {
-        switch (level) {
-            case LEVEL_CONNECTED:
-                return R.drawable.ic_stat_vpn;
-            case LEVEL_AUTH_FAILED:
-            case LEVEL_NONETWORK:
-            case LEVEL_NOTCONNECTED:
-                return R.drawable.ic_stat_vpn_offline;
-            case LEVEL_CONNECTING_NO_SERVER_REPLY_YET:
-            case LEVEL_WAITING_FOR_USER_INPUT:
-                return R.drawable.ic_stat_vpn_outline;
-            case LEVEL_CONNECTING_SERVER_REPLIED:
-                return R.drawable.ic_stat_vpn_empty_halo;
-            case LEVEL_VPNPAUSED:
-                return android.R.drawable.ic_media_pause;
-            case UNKNOWN_LEVEL:
-            default:
-                return R.drawable.ic_stat_vpn;
 
-        }
-    }
     private boolean runningOnAndroidTV() {
         UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
         return uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION;
@@ -445,9 +425,8 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void addVpnActionsToNotification(Notification.Builder nbuilder) {
-        Intent disconnectVPN = new Intent(this, DisconnectVPNActivity.class);
+        Intent disconnectVPN = new Intent(this, OpenVPNService.class);
         disconnectVPN.setAction(DISCONNECT_VPN);
         PendingIntent disconnectPendingIntent = PendingIntent.getActivity(this, 0, disconnectVPN, 0);
 
@@ -1418,14 +1397,14 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
 
     //sending message to main activity
     private void sendMessage(String state) {
-        Intent intent = new Intent("connectionState");
+        Intent intent = new Intent("vpn.master.connectionState");
         intent.putExtra("state", state);
         this.state = state;
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
     }
     //sending message to main activity
     private void sendMessage(String duration, String lastPacketReceive, String byteIn, String byteOut) {
-        Intent intent = new Intent("connectionState");
+        Intent intent = new Intent("vpn.master.connectionState");
         intent.putExtra("duration", duration);
         intent.putExtra("lastPacketReceive", lastPacketReceive);
         intent.putExtra("byteIn", byteIn);
@@ -1441,6 +1420,7 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
     public static String getStatus() {//it will be call from mainactivity for get current status
         return state;
     }
+
     public static void setDefaultStatus() {
         state = "";
     }

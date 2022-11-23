@@ -1,6 +1,7 @@
 package ir.alishi.mastervpn.feature.main
 
 import android.app.Activity
+import android.content.Intent
 import android.content.IntentFilter
 import android.net.VpnService
 import android.os.Bundle
@@ -105,14 +106,11 @@ class MainActivity : ComponentActivity() {
                                     .align(Alignment.Center),
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-
                                 VpnConnectButton(
                                     progress = progress,
                                     progressColor = progressColor,
                                     vpnState = openStateEmission,
-                                    onPressed = {
-                                        startVpn()
-                                    }
+                                    onPressed = { startVpn()}
                                 )
                                 PacketCapture(
                                     duration = packetEmission.duration,

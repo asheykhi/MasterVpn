@@ -1399,7 +1399,7 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
     private void sendMessage(String state) {
         Intent intent = new Intent("vpn.master.connectionState");
         intent.putExtra("state", state);
-        this.state = state;
+        OpenVPNService.state = state;
         LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
     }
     //sending message to main activity

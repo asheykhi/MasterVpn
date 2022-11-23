@@ -72,7 +72,7 @@ public class OpenVPNThread implements Runnable {
             Log.i(TAG, "OpenVPN process exited");
         } catch (Exception e) {
             VpnStatus.logException("Starting OpenVPN Thread", e);
-            Log.e(TAG, "OpenVPNThread Got " + e.toString());
+            Log.e(TAG, "OpenVPNThread Got " + e);
         } finally {
             int exitvalue = 0;
             try {

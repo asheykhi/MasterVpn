@@ -69,12 +69,12 @@ class VpnReceiver : BroadcastReceiver() {
             this._emission.value = packet
 
 
-//            if (duration !=null && lastPacketReceive !=null && byteIn !=null && byteOut !=null){
-//                Log.d("RECEIVE", "DUR :: $duration")
-//                Log.d("RECEIVE", "LPR :: $lastPacketReceive")
-//                Log.d("RECEIVE", "DOW :: $byteIn")
-//                Log.d("RECEIVE", "UPL :: $byteOut")
-//            }
+            if (duration !=null && lastPacketReceive !=null && byteIn !=null && byteOut !=null){
+                Log.d("RECEIVE", "DUR :: $duration")
+                Log.d("RECEIVE", "LPR :: $lastPacketReceive")
+                Log.d("RECEIVE", "DOW :: $byteIn")
+                Log.d("RECEIVE", "UPL :: $byteOut")
+            }
 
 
         }

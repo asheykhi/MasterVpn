@@ -40,6 +40,7 @@ public class OpenVpnApi {
             ProfileManager.setTemporaryProfile(context, vp);
             VPNLaunchHelper.startOpenVpn(vp, context);
         } catch (IOException | ConfigParser.ConfigParseError e) {
+            Log.e(TAG, "startVpnInternal: " + e.getMessage() );
             throw new RemoteException(e.getMessage());
         }
     }
